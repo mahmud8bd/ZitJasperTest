@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Flower" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c72f96d9-38c2-435f-af49-97a4a2b29c57">
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="rgba(255, 255, 255, 0.0)">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="rgba(191, 225, 255, 0.0)">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="rgba(255, 255, 255, 0.0)">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="rgba(251, 253, 255, 0.0)"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="sazzad" uuid="03af8a27-3a93-49f3-9d68-00c6921b9ce6">
+		<field name="slNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="slNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="slNo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<field name="productServiceName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="productServiceName"/>
+			<property name="com.jaspersoft.studio.field.label" value="productServiceName"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<field name="provideUnit" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="provideUnit"/>
+			<property name="com.jaspersoft.studio.field.label" value="provideUnit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<field name="quantity" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+			<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<field name="unitPrice" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="unitPrice"/>
+			<property name="com.jaspersoft.studio.field.label" value="unitPrice"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<field name="totalPrice" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="totalPrice"/>
+			<property name="com.jaspersoft.studio.field.label" value="totalPrice"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<field name="somsPersent" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="somsPersent"/>
+			<property name="com.jaspersoft.studio.field.label" value="somsPersent"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="vat"/>
+		</field>
+		<variable name="TotalRevenew" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{totalPrice}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="h" class="java.util.List"/>
+	<parameter name="musok" class="java.lang.String"/>
+	<parameter name="note1" class="java.lang.String"/>
+	<parameter name="note2" class="java.lang.String"/>
+	<background>
+		<band height="732" splitType="Stretch">
+			<image>
+				<reportElement x="212" y="319" width="220" height="210" uuid="847f1a8b-e48a-47b2-85db-1279aa8de550">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["images/cwm.png"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="2" y="259" width="550" height="170" uuid="fa3ec870-c40b-49b4-90ad-05b008220bc3">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="sazzad" uuid="3c7c980f-3438-443c-9cb7-9512087224c9">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{h})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="50" uuid="76afb101-46aa-45a0-b72a-90a12784f2ad">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="60" uuid="4c47843d-37a8-4776-af0f-43431870958e"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ক্রমিক]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="62527d4d-3244-4c2e-9e6b-389ba4e4ada1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[সর্বমোট]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="5c64f168-0ac6-49a7-89a5-dc949eea7d51"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(১)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="50" height="30" uuid="add45b0e-51dd-469c-b626-dba6fff1921d"/>
+								<textFieldExpression><![CDATA[$F{slNo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="52" uuid="0b99afe9-f895-4e1b-8b25-648686f3839e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="52" height="60" uuid="3d1061c0-4b8e-43d6-bf72-726ed9098994"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[পণ্য বা সেবার  বর্ণনা (প্রয়োজন ক্ষেত্রে  ব্র্যান্ড নামসহ)]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="52" height="30" uuid="f1aaebd9-daed-4ee3-a0c4-8fa4bb25294f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(২)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="52" height="30" uuid="35ce5544-acb2-4a0e-94a9-af8aa4dd5a7e"/>
+								<textFieldExpression><![CDATA[$F{productServiceName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="adfe5090-870a-42be-81d0-1aa1161b01e6">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="60" uuid="545496ca-7586-4930-a86e-9bf0d841869c"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[সরবরাহের একক]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="447af08f-9666-4730-b517-fb60a75e2317"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৩)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="30" uuid="6c427705-f797-4206-9897-5fc5dd3f64b5"/>
+								<textFieldExpression><![CDATA[$F{provideUnit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="aec09c93-e842-4e8e-af6b-57251f83bf46">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="60" uuid="d1720526-f326-44d8-bf7c-39f9bb9701fb"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[পরিমাণ  ]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="30" uuid="adc8ee32-70ce-4a71-8add-86cd60b68aad"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৪)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="30" uuid="7def140e-c48f-446a-85cf-f58d5bd9e6a6"/>
+								<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="ece17d10-3ab7-4500-b7c9-faef607cea7d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="60" uuid="a533a4b4-7390-4b18-9bda-92d76ecd2688"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[একক মূল্য  (টাকায়)]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="2d15e6ff-2379-4808-b3d3-37f8ffeaa0ea"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৫)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="30" uuid="2d704681-892d-4641-909e-d02ec66dfbd3"/>
+								<textFieldExpression><![CDATA[$F{unitPrice}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="46" uuid="447c1aba-69d8-4908-8919-c53170a793e5">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="46" height="60" uuid="3f194969-60b8-4b7d-95e3-5374199329b3"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[মোট মূল্য (টাকায়)]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="46" height="30" uuid="9f28b584-6ab9-41d3-ae83-9a0ad5f6dc7f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৬)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="46" height="30" uuid="66b1e939-b539-4d7c-9ac2-538bd53eca50"/>
+								<textFieldExpression><![CDATA[$F{totalPrice}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="9294d08c-9b13-4670-ab97-a7b8b5729d60">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="60" uuid="b96b40fd-4c77-4eb9-bbe8-538d825bf018"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ সম্পূরক শুল্কের হার]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="30" uuid="f6f2e2d4-c534-4df7-8caa-5ab732848c75"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৭)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30"/>
+					</jr:column>
+					<jr:column width="56" uuid="38b0c7ec-1448-4608-bfe7-a2287d1e8879">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="56" height="60" uuid="15065e24-7c9a-44ae-a47e-595494d65c8a"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[সম্পূরক শুল্কের পরিমাণ  (টাকায়)]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="56" height="30" uuid="0a5b4d0a-760e-46b7-b080-314f161e084f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৮)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30"/>
+					</jr:column>
+					<jr:column width="68" uuid="6c6f45d8-43d9-4c51-b116-8e8e8e7fd0ff">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="60" uuid="7881a7bd-dcc3-40b3-ba14-42d4bced7cf7"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[মূল্য সংযোজন করের হার/সুনির্দিষ্ট কর]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="30" uuid="c63ea5b3-9e8c-4a17-8b9b-8c9352b67ded"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(৯)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30"/>
+					</jr:column>
+					<jr:column width="54" uuid="a4d5b829-6526-4919-abb6-cf3ea6fa875d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="54" height="60" uuid="6bacd4c5-3af6-4ace-8012-7e55a1b6b70f"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[মূল্য সংযোজন কর/সুনির্দিষ্ট করের  পরিমান (টাকায়)]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="54" height="30" uuid="4cb0f3f4-24ff-4dac-93b5-838b9163895c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(১০)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30"/>
+					</jr:column>
+					<jr:column width="46" uuid="eb954fb7-6c93-4429-914b-10883ff54f03">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column11"/>
+						<jr:tableHeader style="Table 1_TH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="46" height="60" uuid="e45c98c4-91e8-4585-8027-a2d5ebd114ed"/>
+								<textElement textAlignment="Center" verticalAlignment="Top">
+									<font fontName="SolaimanLipi" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ সকল প্রকার শুল্ক  ও কর সহ মূল্য]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="Table 1_TH" height="30" rowSpan="1">
+							<textField pattern="#,##0.##¤;(#,##0.##) ¤">
+								<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="46" height="30" uuid="3d8e3ae5-6bad-47e7-bcfc-6b7e1d219e41"/>
+								<textFieldExpression><![CDATA[$V{TotalRevenew}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="Table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="46" height="30" uuid="7de7c7ce-2d09-4f74-97c2-a7536bdb44c1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<text><![CDATA[(১১)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="46" height="30" uuid="4ee6d50f-67f8-4a29-bc5b-1a4510a6b1ed"/>
+								<textElement>
+									<font fontName="SolaimanLipi"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{somsPersent}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="165" y="108" width="230" height="20" uuid="fe6ac8f1-7a07-4336-b328-551d02d071ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<text><![CDATA[[ বিধি ৪০ এর উপ.বিধি (১) এর  দফা (গ) ও দফা (চ) দ্রষ্টব্য ]]]></text>
+			</staticText>
+			<image>
+				<reportElement x="50" y="49" width="50" height="50" uuid="72be0c68-5246-4579-bec2-d948962111bb"/>
+				<imageExpression><![CDATA["images/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="250" y="90" width="60" height="20" uuid="1156afb9-1e11-4c9f-bd43-fa7241554b27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[কর চালান পত্র]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="50" width="120" height="15" uuid="d1e42eee-34fd-4df2-a46c-cd0ddcdfc0ce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<text><![CDATA[ গণপ্রজাতন্ত্রী  বাংলাদেশ সরকার]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="463" y="50" width="48" height="15" uuid="fdb5e9bc-18c5-44a4-b674-38085b29ac90"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{musok}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="245" y="65" width="70" height="18" uuid="a11366d9-2c29-4f80-8064-e5c23f5b7ccf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[জাতীয় রাজস্ব বোর্ড]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="130" width="92" height="15" uuid="cc8dc789-194c-4973-ba2b-5f1a88549a0d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[নিবন্ধিত ব্যক্তির নাম:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="147" width="123" height="15" uuid="d3ff07f2-ea15-4362-aa3c-f6ccc638e47c"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ নিবন্ধিত ব্যক্তির বিআইএন:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="164" width="123" height="15" uuid="038f9c7b-f788-46b7-8e53-8cfc908688c1"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[চালানপত্র ইস্যুর ঠিকানা:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="293" y="130" width="77" height="17" uuid="48c0b7c6-3159-4707-b081-f2705f2a8c90"/>
+				<textElement>
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="185" width="60" height="15" uuid="97fe0ca6-814c-4cc2-9281-dce8d481a3b7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ক্রেতার  নাম:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="201" width="80" height="15" uuid="7c20e9bc-1443-4226-9b83-b7f81c9b7d4b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ক্রেতার  বিআইএন:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="217" width="70" height="15" uuid="dfef9b3f-a91d-48a3-b96e-ef1190d2ac9e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ক্রেতার  ঠিকানা:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="233" width="80" height="15" uuid="af5aa996-e9a5-412b-a2ab-3ab0cd6ed63c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[সরবরাহের গন্তব্যস্থল:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="184" width="70" height="15" uuid="b66c6b96-0bac-443d-8409-a8ed2ddb5a87">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[চালানপত্র নম্বর:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="200" width="60" height="15" uuid="571843ba-2310-4bbd-8370-e1583d5ad9f2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ইস্যুর তারিখ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="216" width="60" height="15" uuid="371cb36e-3721-4180-98fa-c1cb4a696f55">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ইস্যুর সময়:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="232" width="90" height="15" uuid="fee6d28c-1c7f-4b0b-84fa-f65bdf27b72e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" isBold="true"/>
+				</textElement>
+				<text><![CDATA[সরবরাহের গন্তব্যস্থল:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="469" width="505" height="20" uuid="c5dd918f-490a-4e65-a78b-2b796bbc4fa9"/>
+				<textElement>
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{note1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="489" width="505" height="20" uuid="a78eb28c-cff4-4f17-a29b-00f997318c8f"/>
+				<textElement>
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{note2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="545" width="207" height="17" uuid="17e018fc-4c48-4a74-a061-9cb28fe1d4a7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi" size="12"/>
+				</textElement>
+				<text><![CDATA[প্রতিষ্ঠান কর্তৃপক্ষের দায়িত্বপ্রাপ্ত  ব্যক্তির নাম:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="575" width="37" height="20" uuid="643788db-da99-42cf-b977-86b9dbe45eac"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<text><![CDATA[পদবি:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="600" width="37" height="20" uuid="4bf5d62c-e2b0-4003-bd7a-2aad631cda0f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<text><![CDATA[স্বাক্ষর:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="625" width="37" height="20" uuid="b2cf77bd-6060-4f99-83c3-2c9d8656fa17"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SolaimanLipi"/>
+				</textElement>
+				<text><![CDATA[সিল:]]></text>
+			</staticText>
+		</band>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
